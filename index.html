@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>order your pizza</title>
+        <link rel="icon" type="image/png" href="pizza icon.png">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                margin: 0;
+                padding: 0;
+                background: radial-gradient(circle at top left, #fff8d0 0%, #ffd564 35%, #ff8f00 100%);
+                color: #2b2b2b;
+            }
+            header {
+                background: linear-gradient(135deg, #ffb300 0%, #ff6f00 100%);
+                color: #1f1f1f;
+                padding: 32px 20px 28px;
+                text-align: center;
+                box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+                position: relative;
+                overflow: hidden;
+            }
+            header::before {
+                content: '';
+                position: absolute;
+                top: -20%;
+                right: -20%;
+                width: 220px;
+                height: 220px;
+                background: rgba(255, 255, 255, 0.14);
+                border-radius: 50%;
+            }
+            nav {
+                margin-top: 18px;
+            }
+            nav a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: 8px 10px;
+                padding: 10px 18px;
+                text-decoration: none;
+                color: #333;
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 999px;
+                font-size: 0.95rem;
+                letter-spacing: 0.04em;
+                transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            }
+            nav a:hover {
+                transform: translateY(-2px);
+                background: #ffffff;
+            }
+            section {
+                padding: 32px;
+                margin: 24px auto;
+                max-width: 960px;
+                background: rgba(255, 255, 255, 0.96);
+                border-radius: 28px;
+                border: 1px solid rgba(255, 152, 0, 0.18);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            }
+            section h2 {
+                margin-top: 0;
+                color: #d84315;
+            }
+            section p,
+            section li,
+            section label,
+            section textarea,
+            section input {
+                line-height: 1.65;
+            }
+            table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                background: transparent;
+            }
+            th,
+            td {
+                padding: 18px 16px;
+                text-align: left;
+            }
+            th {
+                background: #ffcc00;
+                color: #2d2d2d;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+            }
+            tr:nth-child(even) {
+                background: rgba(255, 235, 205, 0.6);
+            }
+            tr:hover {
+                background: rgba(255, 204, 0, 0.16);
+            }
+            img {
+                max-width: 100%;
+                border-radius: 20px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+                margin: 18px 0;
+            }
+            form {
+                display: grid;
+                gap: 18px;
+            }
+            label {
+                display: block;
+                font-weight: 700;
+                margin-bottom: 8px;
+                color: #4a4a4a;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="number"],
+            input[type="password"],
+            textarea,
+            select {
+                width: 100%;
+                padding: 14px 16px;
+                border: 1px solid rgba(0, 0, 0, 0.14);
+                border-radius: 16px;
+                background: #fff;
+                box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.06);
+                font-size: 1rem;
+                transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            }
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            input[type="number"]:focus,
+            input[type="password"]:focus,
+            textarea:focus,
+            select:focus {
+                outline: none;
+                border-color: #ff8f00;
+                box-shadow: 0 0 0 4px rgba(255, 143, 0, 0.12);
+            }
+            select {
+                appearance: none;
+                background-image: linear-gradient(45deg, transparent 50%, #999 50%), linear-gradient(135deg, #999 50%, transparent 50%);
+                background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 14px) calc(1em + 2px);
+                background-size: 6px 6px, 6px 6px;
+                background-repeat: no-repeat;
+            }
+            .input-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            input[type="checkbox"],
+            input[type="radio"] {
+                margin-right: 8px;
+            }
+            .toppings-group,
+            .sauce-group {
+                display: grid;
+                gap: 10px;
+                padding: 14px 12px;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-radius: 18px;
+                background: #fff8f0;
+            }
+            .toppings-group label,
+            .sauce-group label {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 500;
+            }
+            input[type="submit"],
+            input[type="reset"] {
+                appearance: none;
+                border: none;
+                border-radius: 999px;
+                padding: 14px 24px;
+                font-weight: 700;
+                color: #fff;
+                cursor: pointer;
+                transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            }
+            input[type="submit"] {
+                background: linear-gradient(135deg, #ff8f00 0%, #ffca28 100%);
+                box-shadow: 0 16px 30px rgba(255, 143, 0, 0.28);
+            }
+            input[type="reset"] {
+                background: #6d6d6d;
+                box-shadow: 0 14px 26px rgba(0, 0, 0, 0.18);
+            }
+            input[type="submit"]:hover,
+            input[type="reset"]:hover {
+                transform: translateY(-2px);
+            }
+            footer {
+                text-align: center;
+                padding: 18px 10px;
+                background: #ffcc00;
+                color: #2b2b2b;
+                box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.08);
+            }
+            @media (max-width: 860px) {
+                section {
+                    margin: 16px 14px;
+                    padding: 24px;
+                }
+                nav a {
+                    display: block;
+                    max-width: 240px;
+                    margin: 8px auto;
+                }
+                .input-row {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <hr>
+            <h1>Order Your Pizza</h1>
+            <p>The <b><u><i>BEST</i></u></b> pizza in town!🍕🏢</p>
+            <nav>
+                <a href="#promo">Promo</a>
+                <a href="#menu">Look at menu</a>
+                <a href="#order">Order Now!</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+            <hr>
+        </header>
+        <!-- Promo -->
+        <section id="promo">
+            <h2>Special Offer!</h2>
+            <img src="pizza promo.jpg" alt="Special Offer" width="420">
+            <p><mark>Get 75% off your first order!</mark> Use code: PIZZA75</p>
+            <ul>
+                <li>Choose your favorite pizza from our menu.</li>
+                <li>Enter the promo code at checkout.</li>
+                <li>Enjoy your delicious pizza at a discounted price!</li>
+            </ul>
+        </section>
+        <!-- Menu -->
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <p>Check out our delicious pizza options!</p>
+            <table border="1">
+                <tr>
+                    <th>Pizza</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Margherita</td>
+                    <td>$12.99</td>
+                    <td>A classic favorite with tomato sauce, mozzarella, and fresh basil.</td>
+                </tr>
+                <tr>
+                    <td>Pepperoni</td>
+                    <td>$14.99</td>
+                    <td>Loaded with pepperoni slices and melted cheese.</td>
+                </tr>
+                <tr>
+                    <td>Veggie Delight</td>
+                    <td>$13.99</td>
+                    <td>A medley of fresh vegetables on a cheesy base.</td>
+                </tr>
+                <tr>
+                    <td>BBQ Chicken</td>
+                    <td>$15.99</td>
+                    <td>Grilled chicken, BBQ sauce, and red onions.</td>
+                </tr>
+                <tr>
+                    <td>Hawaiian</td>
+                    <td>$14.49</td>
+                    <td>A tropical twist with ham and pineapple.</td>
+                </tr>
+                <tr>
+                    <td>Meat Lovers</td>
+                    <td>$16.99</td>
+                    <td>A carnivore's dream with pepperoni, sausage, bacon, and ham.</td>
+                </tr>
+                <tr>
+                    <td>Just Cheese</td>
+                    <td>$13.49</td>
+                    <td>A simple yet delicious pizza with just cheese and sauce.</td>
+                </tr>
+            </table>
+        </section>
+        <!-- Order -->
+         <section id="order">
+            <h2>Place Your Order</h2>
+            <form action="https://formspree.io/f/mvkpkrwo" method="POST">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text">
+                <br>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email">
+                <br>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="number">
+                <br>
+                <label for="special-code">Special Code</label>
+                <input id="special-code" name="special_code" type="password" placeholder="...if you have it">
+                <br>
+                <label for="quantity">I would like</label>
+                <input id="quantity" name="quantity" type="number" min="1" max="50" value="1">
+                <label for="size"></label>
+                <select id="size" name="size">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                </select>
+                <select id="pizza" name="pizza">
+                    <option value="Margherita">Margherita</option>
+                    <option value="Pepperoni">Pepperoni</option>
+                    <option value="Veggie Delight">Veggie Delight</option>
+                    <option value="BBQ Chicken">BBQ Chicken</option>
+                    <option value="Hawaiian">Hawaiian</option>
+                    <option value="Meat Lovers">Meat Lovers</option>
+                    <option value="Just Cheese">Just Cheese</option>
+                </select>
+                <label for="pizza">please!</label>
+                <br>
+                <label>With some...</label>
+                <input type="checkbox" name="toppings" id="extra-cheese" value="Extra cheese"> <label for="extra-cheese">Extra cheese</label>
+                <input type="checkbox" name="toppings" id="mushrooms" value="Mushrooms"> <label for="mushrooms">Mushrooms</label>
+                <input type="checkbox" name="toppings" id="peppers" value="Peppers"> <label for="peppers">Peppers</label>
+                <input type="checkbox" name="toppings" id="onions" value="Onions"> <label for="onions">Onions</label>
+                <input type="checkbox" name="toppings" id="olives" value="Olives"> <label for="olives">Olives</label>
+                <input type="checkbox" name="toppings" id="pineapple" value="Pineapple"> <label for="pineapple">MORE PINEAPPLE</label>
+                <input type="text" id="custom-toppings" name="custom_toppings" placeholder="Other toppings...">
+                <br>
+                <p>And my saucings are:</p>
+                <input type="radio" id="bbq" name="sauce" value="bbq"> <label for="bbq">BBQ</label>
+                <input type="radio" id="tomato" name="sauce" value="tomato"> <label for="tomato">Tomato</label>
+                <input type="radio" id="alfredo" name="sauce" value="alfredo"> <label for="alfredo">Alfredo</label>
+                <input type="radio" id="pesto" name="sauce" value="pesto"> <label for="pesto">Pesto</label>
+                <input type="radio" id="no-sauce" name="sauce" value="no sauce"> <label for="no-sauce">I DONT LIKE SAUCE >:(</label>
+                <br><br>
+                <label for="additional-requests">Additional Requests</label>
+                <br>
+                <textarea cols="50" rows="5" name="additional_requests" id="additional-requests"></textarea>
+                <br><input type="submit" value="Place Order"><input type="reset" value="Reset Form">
+            </form>
+         </section>
+         <!-- COntact -->
+        <section id="contact">
+          <h2>Contact Us</h2>
+          <p>📍 Nowhere st. No.69 Nobody nose, Nolandia</p>
+          <a href="mailto:syamsbhima@atomicmail.io">💌 syamsbhima@atomicmail.io</a>
+          <p>📞 <a target="_blank" href="https://wa.me/6285717197591?text=HI%20I%20want%20to%20order%20a%20pizza!">+62 857-1719-7591</a></p>
+        </section>
+        <!-- Footer -->
+        <footer>
+            <hr>
+            <p>© 6969 Order Your Pizza. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
