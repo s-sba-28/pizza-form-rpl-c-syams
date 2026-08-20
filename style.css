@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet');
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #fff5f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #ff8c00;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+nav {
+  background-color: #ff9f1c;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff5f0;
+  text-decoration: underline;
+  transition: fade 0.3s;
+  transform: scale(1.5);  /* Makes link bigger on hover */
+}
+
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* Styling sections */
+section {
+  background-color: white;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 10px;  /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+section h2 {
+  color: #ff8c00;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #ff8c00;  /* Line under heading */
+  padding-bottom: 10px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;  /* Remove double borders */
+}
+
+table th {
+  background-color: #ff8c00;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+  background-color: #fff5f0;  /* Highlight row on hover */
+}
+
+/* Mark/highlight styling */
+mark {
+  background-color: #ffeb3b;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* List styling */
+ul {
+  margin-left: 20px;
+  padding: 15px 0;
+}
+
+li {
+  list-style: inside;
+}
+
+ul li {
+  margin: 8px 0;
+  line-height: 1.8;
+}
+
+.container {
+  background-color: white;
+  border: 3px solid #ff8c00;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+section menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Button styling */
+
+button {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff7700;
+}
+
+footer {
+  background-color: #ff8c00;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* Form section styling */
+.form-section {
+  background-color: #fff5f0;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+select {
+  width: 100%;
+  padding: 10px 40px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+select:focus {
+  outline: none;
+  border-color: #ff8c00;
+  box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+}
+
+.form-label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+button[type="submit"], button[type="reset"] {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  padding: 15px 460px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+button[type="submit"]:hover, button[type="reset"]:hover {
+  background-color: #ff7700;
+}
+
+/* contact section */
+#contact p {
+  margin: 10px auto;
+  padding: 10px;
+  width: max-content;
+  border: 2px solid rgb(255, 136, 0);
+}

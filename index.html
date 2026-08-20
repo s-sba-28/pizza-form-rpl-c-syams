@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>order your pizza</title>
+        <link rel="icon" type="image/png" href="pizza icon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+<!-- Header -->
+        <header>
+            <hr>
+            <h1>Order Your Pizza</h1>
+            <p>The <b><u><i>BEST</i></u></b> pizza in town!🍕🏢</p>
+            <nav>
+                <a href="#promo">Promo</a>
+                <a href="#menu">Look at menu</a>
+                <a href="#order">Order Now!</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+            <hr>
+        </header>
+        <!-- Promo -->
+        <section id="promo">
+            <h2>Special Offer!</h2>
+            <img src="pizza promo.jpg" alt="Special Offer" width="420">
+            <p><mark>Get 75% off your first order!</mark> Use code: PIZZA75</p>
+            <ul>
+                <li>Choose your favorite pizza from our menu.</li>
+                <li>Enter the promo code at checkout.</li>
+                <li>Enjoy your delicious pizza at a discounted price!</li>
+            </ul>
+        </section>
+        <!-- Menu -->
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <p>Check out our delicious pizza options!</p>
+            <table border="1">
+                <tr>
+                    <th>Pizza</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Margherita</td>
+                    <td>$12.99</td>
+                    <td>A classic favorite with tomato sauce, mozzarella, and fresh basil.</td>
+                </tr>
+                <tr>
+                    <td>Pepperoni</td>
+                    <td>$14.99</td>
+                    <td>Loaded with pepperoni slices and melted cheese.</td>
+                </tr>
+                <tr>
+                    <td>Veggie Delight</td>
+                    <td>$13.99</td>
+                    <td>A medley of fresh vegetables on a cheesy base.</td>
+                </tr>
+                <tr>
+                    <td>BBQ Chicken</td>
+                    <td>$15.99</td>
+                    <td>Grilled chicken, BBQ sauce, and red onions.</td>
+                </tr>
+                <tr>
+                    <td>Hawaiian</td>
+                    <td>$14.49</td>
+                    <td>A tropical twist with ham and pineapple.</td>
+                </tr>
+                <tr>
+                    <td>Meat Lovers</td>
+                    <td>$16.99</td>
+                    <td>A carnivore's dream with pepperoni, sausage, bacon, and ham.</td>
+                </tr>
+                <tr>
+                    <td>Just Cheese</td>
+                    <td>$13.49</td>
+                    <td>A simple yet delicious pizza with just cheese and sauce.</td>
+                </tr>
+            </table>
+        </section>
+        <!-- Order -->
+         <section id="order" class="form-section">
+            <h2>Place Your Order</h2>
+            <form action="https://formspree.io/f/mvkpkrwo" method="POST">
+                <label for="name" class="form-label">Name</label>
+                <input id="name" name="name" type="text">
+                <br>
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="email">
+                <br>
+                <label for="phone" class="form-label">Phone</label>
+                <input id="phone" name="phone" type="number">
+                <br>
+                <label for="special-code" class="form-label">Special Code</label>
+                <input id="special-code" name="special_code" type="password" placeholder="...if you have it">
+                <br>
+                <label for="quantity" class="form-label">I would like</label>
+                <input id="quantity" name="quantity" type="number" min="1" max="50" value="1">
+                <label for="size" class="form-label">Size</label>
+                <select id="size" name="size">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                </select>
+                <label for="pizza" class="form-label">Pizza Type</label>
+                <select id="pizza" name="pizza">
+                    <option value="Margherita">Margherita</option>
+                    <option value="Pepperoni">Pepperoni</option>
+                    <option value="Veggie Delight">Veggie Delight</option>
+                    <option value="BBQ Chicken">BBQ Chicken</option>
+                    <option value="Hawaiian">Hawaiian</option>
+                    <option value="Meat Lovers">Meat Lovers</option>
+                    <option value="Just Cheese">Just Cheese</option>
+                </select>
+                <label for="pizza" class="form-label">please!</label>
+                <br>
+                <label>With some...</label>
+                <input type="checkbox" name="toppings" id="extra-cheese" value="Extra cheese"> <label for="extra-cheese">Extra cheese</label>
+                <input type="checkbox" name="toppings" id="mushrooms" value="Mushrooms"> <label for="mushrooms">Mushrooms</label>
+                <input type="checkbox" name="toppings" id="peppers" value="Peppers"> <label for="peppers">Peppers</label>
+                <input type="checkbox" name="toppings" id="onions" value="Onions"> <label for="onions">Onions</label>
+                <input type="checkbox" name="toppings" id="olives" value="Olives"> <label for="olives">Olives</label>
+                <input type="checkbox" name="toppings" id="pineapple" value="Pineapple"> <label for="pineapple">MORE PINEAPPLE</label>
+                <input type="text" id="custom-toppings" name="custom_toppings" placeholder="Other toppings...">
+                <br>
+                <p>And my saucings are:</p>
+                <input type="radio" id="bbq" name="sauce" value="bbq"> <label style="margin-right: 10px;" for="bbq">BBQ</label>
+                <input type="radio" id="tomato" name="sauce" value="tomato"> <label style="margin-right: 10px;" for="tomato">Tomato</label>
+                <input type="radio" id="alfredo" name="sauce" value="alfredo"> <label style="margin-right: 10px;" for="alfredo">Alfredo</label>
+                <input type="radio" id="pesto" name="sauce" value="pesto"> <label style="margin-right: 10px;" for="pesto">Pesto</label>
+                <input type="radio" id="no-sauce" name="sauce" value="no sauce"> <label style="margin-right: 10px;" for="no-sauce">I DONT LIKE SAUCE >:(</label>
+                <br><br>
+                <label for="additional-requests" class="form-label">Additional Requests</label>
+                <br>
+                <textarea cols="50" rows="5" name="additional_requests" id="additional-requests"></textarea>
+                <br><button type="submit" value="Place Order">Place Order</button><br><br><button type="reset" value="Reset Form">Reset Form</button>
+            </form>
+         </section>
+         <!-- COntact -->
+        <section id="contact" class="contact">
+          <h2>Contact Us</h2>
+          <p>📍 Nowhere st. No.69 Nobody nose, Nolandia</p>
+          <p>💌 <a href="mailto:syamsbhima@atomicmail.io">syamsbhima@atomicmail.io</a></p>
+          <p>📞 <a target="_blank" href="https://wa.me/6285717197591?text=HI%20I%20want%20to%20order%20a%20pizza!">+62 857-1719-7591</a></p>
+        </section>
+        <!-- Footer -->
+        <footer>
+            <hr>
+            <p>© 6969 Order Your Pizza. All rights reserved.</p>
+        </footer>
+        </div>
+        
+    </body>
+</html>
